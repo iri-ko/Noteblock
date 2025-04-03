@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    body {
+        background-color: rgb(20, 7, 17);
+        color: white;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        h1 {
+            font-size: 80px;
+            text-decoration: underline;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 24px;
+        }
+    }
+}

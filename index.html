@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizbuch</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/assets.css">
+    <link rel="stylesheet" href="styles/standart.css">
+
+
+</head>
+
+<body onload="init()">
+
+    <h1>Notizblock</h1>
+
+    <h2>Notizen</h2>
+
+    <input id="note_input" type="text">
+
+    <button onclick="addNote()">Notiz speichern</button>
+    
+    <div id="content">
+        
+    </div> 
+
+    <h2>Gelöschte Notizen</h2>
+    
+    <div id="trashContent"></div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
