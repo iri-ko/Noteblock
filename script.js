@@ -1,5 +1,5 @@
-let notesTitle = ["Banane", "Aufgabe"];
-let notes = ["banana", "rasenmähen"];
+let notesTitle = ["Task", "Reminder", "Upcoming Birthday"];
+let notes = [];
 
 let trashNotes = [];
 
@@ -11,9 +11,13 @@ function init(){
 
     getFromLocalStorage();
 
+    renderMenu()
+
     renderNotes()
     renderTrashNotes()
 }
+
+
 
 function getFromLocalStorage(){
     let myArr = JSON.parse(localStorage.getItem("notes"));
@@ -32,6 +36,18 @@ function getFromLocalStorage(){
     
     trashNotes = myArr2;
 }
+
+function renderMenu (){
+    let  menuRef = document.getElementById("menu");
+
+    menuRef.innerHTML=""
+
+    for (let indexMenu = 0; indexMenu < notesTitle.length; indexMenu++) {
+        menuRef.innerHTML += getMenuTemplates(indexMenu);   
+    }
+}
+
+
 
 function renderNotes() {
     let contentRef = document.getElementById("content");
@@ -60,9 +76,7 @@ function renderTrashNotes() {
     }
 }
 
-function getTrashNoteTemplates(indexNote) {
-    return `<p class="note">+ Titel: ${trashNotes[indexNote].title} -> ${trashNotes[indexNote].content} <button onclick="deleteNote(${indexNote})">x</button></p>`;
-}
+
 
 function addNote() {
     let noteInputRef = document.getElementById("note_input");
@@ -104,4 +118,7 @@ function deleteNote(indexNote) {
     renderTrashNotes();
 }
 
-// archive notes
+function toggleDNone(){
+    const menuRef = document.getElementById('menu');
+    menuRef.classList.toggle("d_none");
+}

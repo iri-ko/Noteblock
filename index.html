@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notizbuch</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Notizbuch</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styles/assets.css">
-    <link rel="stylesheet" href="styles/standart.css">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="styles/assets.css" />
+        <link rel="stylesheet" href="styles/standart.css" />
+    </head>
 
+    <body onload="init()">
 
-</head>
+        <h1>Notes</h1>
 
-<body onload="init()">
-
-    <h1>Notizblock</h1>
-
-    <h2>Notizen</h2>
-
-    <input id="note_input" type="text">
-
-    <button onclick="addNote()">Notiz speichern</button>
-    
-    <div id="content">
         
-    </div> 
 
-    <h2>Gelöschte Notizen</h2>
-    
-    <div id="trashContent"></div>
+        <form action="">
 
+            <div id="dropdown">
+                <div><span>Choose type</span><img onmouseover="toggleDNone()" src="./assets/icons/pencil-solid-60.png"></div>
+                <div id="menu" class="d_none" ">
+                </div>
+            </div>
 
+            <input id="note_input" type="text" required />
 
-    <script src="script.js"></script>
-</body>
+            <button onclick="addNote()">Notiz speichern</button>
+        </form>
 
+        <h2>Current Notes</h2>
+
+        <div id="content"></div>
+
+        <h2>Archive</h2>
+
+        <div id="archivedContent"></div>
+
+        <h2>Deleted Notes</h2>
+
+        <div id="trashContent"></div>
+
+        <script src="scripts/templates.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
